@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Item from './Item';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      newsFeed: [],
+    }
+  }
+
+  componentDidMount() {
+    this.getNews()
+  }
+
+  getNews() {
+    fetch('http://localhost:3001/getData')
+      .then(res => res.json())
+      .then(resJson => this.setState({newsFeed: resJson.res}))
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,9 +29,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ul>
+          { this.state.newsFeed.map(item => <Item name={item.title}/>) }
+        </ul>
       </div>
     );
   }
