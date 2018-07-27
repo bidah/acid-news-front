@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
 export default class Item extends Component {
-  constructor(props){
-    super(props)
-  }
 
   render() {
     return (
-      <li>{this.props.name}</li>
+      <ul>
+        { this.props.items.map((item, index) => <li key={index}>{item.title}</li>) }
+      </ul>
     )
   }
 }

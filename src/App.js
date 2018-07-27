@@ -31,9 +31,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <ul>
-          { this.state.newsFeed.map(item => <Item name={item.title}/>) }
-        </ul>
+        <Item items={this.state.newsFeed}/>
       </div>
     );
   }
