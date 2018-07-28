@@ -27,7 +27,7 @@ export default class Items extends Component {
   render() {
     return (
       this.state.loading 
-      ? <p>loading</p>
+      ? <p className="loading">loading...</p>
       : (<ul className="items-wrapper">
           { 
             this.state.items

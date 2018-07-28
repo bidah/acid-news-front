@@ -7,3 +7,11 @@ a:link, a:active, a:visited {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
 }
+
+.loading {
+  width: 100vw;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

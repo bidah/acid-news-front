@@ -1,8 +1,11 @@
 .App-header {
   background-color: #FF742B; 
-  padding: 18px;
   color: white;
   text-align: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-title {
