@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Items.css';
 
 export default class Items extends Component {
 
@@ -27,7 +28,7 @@ export default class Items extends Component {
     return (
       this.state.loading 
       ? <p>loading</p>
-      : (<ul>
+      : (<ul className="items-wrapper">
           { 
             this.state.items
               .map((item, index) => <li key={index}>{item.title}</li>) 
