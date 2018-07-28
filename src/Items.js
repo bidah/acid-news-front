@@ -33,8 +33,11 @@ export default class Items extends Component {
             this.state.items
               .map((item, index) => {
                 return (
-                  <a href={item.story_url} target="blanc">
-                    <li key={index}>{item.title}</li>
+                  <a 
+                    href={item.story_url} 
+                    target="blanc"
+                    key={index}>
+                    <li >{item.title}</li>
                   </a>
                 );
               }) 
