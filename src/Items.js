@@ -31,7 +31,13 @@ export default class Items extends Component {
       : (<ul className="items-wrapper">
           { 
             this.state.items
-              .map((item, index) => <li key={index}>{item.title}</li>) 
+              .map((item, index) => {
+                return (
+                  <a href={item.story_url} target="blanc">
+                    <li key={index}>{item.title}</li>
+                  </a>
+                );
+              }) 
           }
         </ul>)
     )

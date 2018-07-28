@@ -3,3 +3,7 @@ li {
   border-bottom: 1px solid #eaeaea;
   text-align: center;
 }
+a:link, a:active, a:visited {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
