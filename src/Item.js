@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Item.css';
+import Portal from './Portal';
+import LinkNavigator from './LinkNavigator';
 
 export default class Item extends Component {
   constructor(props){
@@ -7,6 +9,7 @@ export default class Item extends Component {
 
     this.state = {
       points: null,
+      modal: false,
     }
   }
 
@@ -20,20 +23,35 @@ export default class Item extends Component {
       .then(resJson => this.setState({points: resJson.res}))
   }
 
+  toggleModal = (e) => {
+    this.setState({modal: !this.state.modal})
+  }
+
   render(){
+
+    let modal;
+    if(this.state.modal) {
+      modal = (
+        <LinkNavigator url={this.props.url}/>
+      )
+    } 
+
     return (
-      <a 
-        href = {this.props.url} 
-        target = "blanc"
-        key = {this.props.index}
-      >
-        <li>
-          <p>{this.state.points}</p>
-          <p>
-            {this.props.title}
-          </p>
-        </li>
-      </a>
+      <div>
+        <a 
+          onClick = {this.toggleModal}
+          target = "blanc"
+          key = {this.props.index}
+        >
+          <li>
+            <p>{this.state.points}</p>
+            <p>
+              {this.props.title}
+            </p>
+          </li>
+        </a>
+        { modal }
+      </div>
     )
   }
 
