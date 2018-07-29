@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Items.css';
 import Item from './Item';
+import Loading from './Loading';
 
 export default class Items extends Component {
 
@@ -44,7 +45,7 @@ fetch(url)
   render() {
     return (
       this.state.loading 
-      ? <p className="loading">loading...</p>
+      ? <Loading/>
       : (<ul className="items-wrapper">
           { 
             this.state.items

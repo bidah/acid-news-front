@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './LinkNavigator.css';
+import Loading from './Loading';
 
 export default class Item extends Component {
   constructor(props){
     super(props)
 
     this.state = {
-      article: ''
+      article: '',
+      loading: true,
     }
 
     this.bodyEl = document.querySelector('body');
@@ -37,19 +39,29 @@ export default class Item extends Component {
       .then(resJson =>{
         this.setState({article: resJson.objects[0]})
       })
+      .finally(() => this.setState({loading: false}))
   }
 
   render() {
     return (
-      <div className="link-navigator">
-        <header onClick={this.props.toggleModal}>
-          <p> X </p>
-        </header>
-        <section>
-          <h1>{this.state.article.title}</h1>
-          <p>{this.state.article.text}</p>
-        </section>
-      </div>
-    )
+
+        <div className="link-navigator">
+
+          <header 
+            onClick={this.props.toggleModal}>
+            <p> X </p>
+          </header>
+          {
+            this.state.loading 
+            ? <Loading/>
+            : (
+              <section>
+                <h1>{this.state.article.title}</h1>
+                <p>{this.state.article.text}</p>
+              </section>
+            )
+          }
+        </div>
+      )
   }
 }
