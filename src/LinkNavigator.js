@@ -9,20 +9,31 @@ export default class Item extends Component {
     this.state = {
       article: ''
     }
-    
+
+    this.bodyEl = document.querySelector('body');
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.bodyEl.classList.add('overflow')
+    this.getArticle(this.props.url)
+  }
+
+  componentWillUnmount = () => {
+    this.bodyEl.classList.remove('overflow')
+  }
+
+  getArticle = (link) => {
+
     var url = new URL('https://api.diffbot.com/v3/article')
 
     var params = {
       token: '03de456dbbf7ca6158fc550a73134783',
-      url: 'https://medium.com/@readability/the-readability-bookmarking-service-will-shut-down-on-september-30-2016-1641cc18e02b'
+      url: link
     }
 
     url.search = new URLSearchParams(params)
 
-fetch(url)
+    fetch(url)
       .then(res => res.json())
       .then(resJson =>{
         this.setState({article: resJson.objects[0]})
@@ -32,7 +43,7 @@ fetch(url)
   render() {
     return (
       <div className="link-navigator">
-        <header>
+        <header onClick={this.props.toggleModal}>
           <p> X </p>
         </header>
         <section>

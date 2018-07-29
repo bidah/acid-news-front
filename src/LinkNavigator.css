@@ -19,14 +19,14 @@ section {
   background: white;
 }
 
+section p {
+  line-height: 1.8rem;
+  padding: 0px 20px 20px 20px;
+}
+
 h1 {
   font-size: 22px;
   padding: 20px;
-}
-
-p {
-  line-height: 1.8rem;
-  padding: 0px 20px 20px 20px;
 }
 
 iframe {

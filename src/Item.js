@@ -32,7 +32,9 @@ export default class Item extends Component {
     let modal;
     if(this.state.modal) {
       modal = (
-        <LinkNavigator url={this.props.url}/>
+        <LinkNavigator
+          toggleModal={this.toggleModal}
+          url={this.props.url}/>
       )
     } 
 
