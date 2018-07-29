@@ -24,6 +24,8 @@ export default class Item extends Component {
   }
 
   getArticle = (link) => {
+    if(this.props.askItem)
+      return;
 
     var url = new URL('https://api.diffbot.com/v3/article')
 
@@ -42,6 +44,24 @@ export default class Item extends Component {
       .finally(() => this.setState({loading: false}))
   }
 
+  layoutLink = () => {
+    return (
+      <section>
+        <h1>{this.state.article.title}</h1>
+        <p>{this.state.article.text}</p>
+      </section>
+    )
+  }
+
+  layoutAsk = () => {
+    return (
+      <section>
+        <h1>{this.state.article.title}</h1>
+      </section>
+    )
+  }
+
+
   render() {
     return (
 
@@ -54,12 +74,7 @@ export default class Item extends Component {
           {
             this.state.loading 
             ? <Loading/>
-            : (
-              <section>
-                <h1>{this.state.article.title}</h1>
-                <p>{this.state.article.text}</p>
-              </section>
-            )
+            : this.props.askItem ? this.layoutAsk() : this.layoutLink()
           }
         </div>
       )

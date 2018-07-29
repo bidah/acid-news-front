@@ -34,7 +34,9 @@ export default class Item extends Component {
       modal = (
         <LinkNavigator
           toggleModal={this.toggleModal}
-          url={this.props.url}/>
+          url={this.props.url}
+          askItem={!Boolean(this.props.url)}
+        />
       )
     } 
 
@@ -42,7 +44,6 @@ export default class Item extends Component {
       <div>
         <a 
           onClick = {this.toggleModal}
-          target = "blanc"
           key = {this.props.index}
         >
           <li>
