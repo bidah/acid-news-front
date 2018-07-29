@@ -35,6 +35,7 @@ export default class Items extends Component {
               .map((item, index) => {
                 return (
                   <Item
+                    id={item.story_id}
                     url={item.story_url} 
                     title={item.title} 
                     index={index}/>

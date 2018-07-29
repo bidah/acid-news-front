@@ -3,17 +3,23 @@ li {
   padding-left: 0;
   border-bottom: 1px solid #eaeaea;
   text-align: center;
-  display: flex; }
-  li p:first-child {
+  display: flex;
+
+  p:first-child {
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 58px;
-    color: #FF742B; }
-  li p {
-    text-align: left; }
+    color: #FF742B;
+  }
+  p {
+    text-align: left;
+  }
+}
 
 a:link, a:active, a:visited {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(0, 0, 0, 0.8);
+}
+
