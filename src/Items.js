@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Items.css';
+import Item from './Item';
 
 export default class Items extends Component {
 
@@ -33,12 +34,10 @@ export default class Items extends Component {
             this.state.items
               .map((item, index) => {
                 return (
-                  <a 
-                    href={item.story_url} 
-                    target="blanc"
-                    key={index}>
-                    <li >{item.title}</li>
-                  </a>
+                  <Item
+                    url={item.story_url} 
+                    title={item.title} 
+                    index={index}/>
                 );
               }) 
           }
