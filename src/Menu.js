@@ -12,7 +12,7 @@ class Menu extends Component {
         </Link>
 
         <Link to="/read-later">
-          <li>Read Later Items</li>
+          <li>Read Later List</li>
         </Link>
       </ul>
     );
