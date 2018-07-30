@@ -25,7 +25,7 @@ export default class Item extends Component {
       window.navigator.userAgent.split(' ').join('')
     )
 
-    Boolean(JSON.parse(readList).includes(this.props.id))
+    return Boolean(JSON.parse(readList).includes(this.props.id))
     ? this.setState({readLater: true}) : ''
   }
   componentDidMount = () => {

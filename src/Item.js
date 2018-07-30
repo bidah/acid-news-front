@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Item.css';
-import Portal from './Portal';
+// import Portal from './Portal';
 import LinkNavigator from './LinkNavigator';
 
 export default class Item extends Component {

@@ -5,7 +5,7 @@ import App from './App';
 import Menu from './Menu';
 import ReadLater from './ReadLater';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 class Layout extends Component {
   render(){

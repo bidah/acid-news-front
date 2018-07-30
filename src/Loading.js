@@ -13,7 +13,7 @@ export default class Loading extends Component {
   componentDidMount(){
 
     setInterval(() => {
-      Boolean(this.props.loadingArticleMessage)
+      return Boolean(this.props.loadingArticleMessage)
       ? this.setState({message: 'Mejorando formato lectura...'})
       : '' 
     }, 2000)

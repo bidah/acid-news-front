@@ -1,5 +1,5 @@
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './ReadLater.css';
 import Loading from './Loading';
 import { Link } from 'react-router-dom'
@@ -39,7 +39,7 @@ export default class ReadLater extends Component {
         <header className="App-header">
           <h1 className="App-title">Read Later List</h1>
           <Link to="/menu">
-            <img src={burgerIcon}/>
+            <img src={burgerIcon} alt="menu"/>
           </Link>
         </header>
         {

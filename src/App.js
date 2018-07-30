@@ -31,7 +31,7 @@ class App extends Component {
           <header className="App-header">
             <h1 className="App-title">Acid Hacker News</h1>
             <Link to="/menu">
-              <img src={burgerIcon}/>
+              <img src={burgerIcon} alt="menu"/>
             </Link>
           </header>
         <Items/>
