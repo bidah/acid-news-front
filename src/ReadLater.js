@@ -35,7 +35,7 @@ export default class ReadLater extends Component {
 
   render() {
     return (
-      <div class="read-later">
+      <div className="read-later">
         <header className="App-header">
           <h1 className="App-title">Read Later List</h1>
           <Link to="/menu">
