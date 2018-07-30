@@ -16,11 +16,11 @@ export default class Items extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.getNews()
   }
 
-  getNews() {
+  getNews = () => {
     fetch('http://localhost:3001/getData')
       .then(res => res.json())
       .then(resJson => this.setState({items: resJson.res}))

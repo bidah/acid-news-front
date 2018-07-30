@@ -15,6 +15,19 @@ export default class Item extends Component {
     this.bodyEl = document.querySelector('body');
   }
 
+  componentWillMount = () => {
+    this.isReadLater();
+  }
+
+  isReadLater = () => {
+
+    let readList = localStorage.getItem(
+      window.navigator.userAgent.split(' ').join('')
+    )
+
+    Boolean(JSON.parse(readList).includes(this.props.id))
+    ? this.setState({readLater: true}) : ''
+  }
   componentDidMount = () => {
     this.bodyEl.classList.add('overflow')
     this.getArticle(this.props.url)
