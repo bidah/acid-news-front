@@ -23,6 +23,20 @@ export default class Item extends Component {
     this.bodyEl.classList.remove('overflow')
   }
 
+  setReadLater = () => {
+    fetch('http://localhost:3001/item/' + 'setReadLater', {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user: window.localStorage.getItem('user'),
+        itemId: this.props.id
+      }),
+    })
+  }
+
   getArticle = (link) => {
     if(this.props.askItem)
       return this.setState({loading: false})
@@ -76,6 +90,10 @@ export default class Item extends Component {
             ? <Loading/>
             : this.props.askItem ? this.layoutAsk() : this.layoutLink()
           }
+          <footer
+            onClick={this.setReadLater}>
+            <p> Read Later </p>
+          </footer>
         </div>
       )
   }

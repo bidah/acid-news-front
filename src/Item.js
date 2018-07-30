@@ -36,6 +36,7 @@ export default class Item extends Component {
       modal = (
         <LinkNavigator
           toggleModal={this.toggleModal}
+          id={this.props.id}
           url={this.props.url}
           askItem={!Boolean(this.props.url)}
         />

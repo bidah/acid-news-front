@@ -5,6 +5,20 @@ import './App.css';
 
 class App extends Component {
 
+
+  componentDidMount() {
+    this.setLocalStorage();
+  }
+
+  // create user based on userAgent
+  setLocalStorage = () => {
+    window.localStorage.setItem(
+      'user', 
+      'testing_user'
+      // window.navigator.userAgent.split(' ').join('')
+    )
+  }
+
   render() {
     return (
       <div className="App">
