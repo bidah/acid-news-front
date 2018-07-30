@@ -9,6 +9,7 @@ export default class Item extends Component {
     this.state = {
       article: '',
       loading: true,
+      readLater: false,
     }
 
     this.bodyEl = document.querySelector('body');
@@ -34,6 +35,7 @@ export default class Item extends Component {
       arr.push(this.props.id)
     
     window.localStorage.setItem(readList, JSON.stringify(arr)) 
+    this.setState({readLater: true})
   }
 
   getArticle = (link) => {
@@ -74,7 +76,6 @@ export default class Item extends Component {
     )
   }
 
-
   render() {
     return (
 
@@ -91,7 +92,7 @@ export default class Item extends Component {
           }
           <footer
             onClick={this.setReadLater}>
-            <p> Read Later </p>
+            <p>{this.state.readLater ? 'Saved!' : 'Read Later'}</p>
           </footer>
         </div>
       )

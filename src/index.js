@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Menu from './Menu';
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Layout extends Component {
+  render(){
+    return (
+        <BrowserRouter>
+          <div>
+            <Route exact path={"/"} component={App}/>
+            <Route path={"/menu"} component={Menu}/>
+          </div>
+        </BrowserRouter>
+    )
+  }
+}
+
+ReactDOM.render(<Layout />, document.getElementById('root'));
 registerServiceWorker();
