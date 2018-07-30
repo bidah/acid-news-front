@@ -14,13 +14,15 @@ export default class Item extends Component {
   }
 
   componentDidMount(){
-    this.getPoints(this.props.id)
+    this.getPoints(this.props.title, this.props.id)
   }
 
-  getPoints(id) {
+  getPoints(title, id) {
+    console.log(title + ' :', id);
     fetch('http://localhost:3001/item/points/' + id)
       .then(res => res.json())
       .then(resJson => this.setState({points: resJson.res}))
+      .catch(e => {console.log('getPoints error: ', e)})
   }
 
   toggleModal = (e) => {

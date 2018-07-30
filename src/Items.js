@@ -42,6 +42,19 @@ fetch(url)
       .finally(() => this.setState({loading: false}))
   }
 
+  storyId = (items) => {
+
+    if(items.story_id != null)
+      return items.story_id
+
+    //some objs don't include story_id prop, so we are grabbing it from the tags array.
+    let reducer = (acc, curr) => {
+      return curr.includes('story') ? acc.concat(curr.replace('story_', '')) : ''
+    }
+
+    return items._tags.reduce(reducer, '')
+  }
+
   render() {
     return (
       this.state.loading 
@@ -53,7 +66,7 @@ fetch(url)
                 return (
                   <Item
                     key={index}
-                    id={item.story_id}
+                    id={this.storyId(item)}
                     url={item.story_url} 
                     title={item.title} 
                     index={index}/>
