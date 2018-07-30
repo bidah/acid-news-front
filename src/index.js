@@ -9,7 +9,10 @@ class Layout extends Component {
   render(){
     return (
         <BrowserRouter>
-          <Route path={"/"} component={App}/>
+          <div>
+            <Route exact path={"/"} component={App}/>
+            <Route path={"/hey"} component={App}/>
+          </div>
         </BrowserRouter>
     )
   }
