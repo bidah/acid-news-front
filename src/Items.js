@@ -67,7 +67,7 @@ fetch(url)
                   <Item
                     key={index}
                     id={this.storyId(item)}
-                    url={item.story_url} 
+                    url={item.url} 
                     title={item.title} 
                     index={index}/>
                 );
