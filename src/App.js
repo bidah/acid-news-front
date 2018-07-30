@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import logo from './logo.svg';
 import Items from './Items';
 import './App.css';
-
+import { Link } from 'react-router-dom'
+import burgerIcon from './images/bar-menu.svg';
 class App extends Component {
 
 
@@ -28,9 +28,12 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <header className="App-header">
-          <h1 className="App-title">Acid Hacker News</h1>
-        </header>
+          <header className="App-header">
+            <h1 className="App-title">Acid Hacker News</h1>
+            <Link to="/menu">
+              <img src={burgerIcon}/>
+            </Link>
+          </header>
         <Items/>
       </Fragment>
     );

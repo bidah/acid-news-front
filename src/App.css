@@ -8,7 +8,17 @@
   justify-content: center;
 }
 
+a {
+  margin-left: auto;
+}
+
+a img {
+  max-width: 20px;
+  padding: 20px;
+}
+
 .App-title {
+  position: absolute;
   font-size: 1.5em;
 }
 

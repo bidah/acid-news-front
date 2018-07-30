@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Menu from './Menu';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class Layout extends Component {
   render(){
@@ -11,7 +12,7 @@ class Layout extends Component {
         <BrowserRouter>
           <div>
             <Route exact path={"/"} component={App}/>
-            <Route path={"/hey"} component={App}/>
+            <Route path={"/menu"} component={Menu}/>
           </div>
         </BrowserRouter>
     )
