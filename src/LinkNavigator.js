@@ -86,7 +86,7 @@ export default class Item extends Component {
           </header>
           {
             this.state.loading 
-            ? <Loading/>
+            ? <Loading loadingArticleMessage/>
             : this.props.askItem ? this.layoutAsk() : this.layoutLink()
           }
           <footer
