@@ -25,7 +25,7 @@ export default class Item extends Component {
 
   getArticle = (link) => {
     if(this.props.askItem)
-      return;
+      return this.setState({loading: false})
 
     var url = new URL('https://api.diffbot.com/v3/article')
 
