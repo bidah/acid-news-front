@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Menu from './Menu';
+import ReadLater from './ReadLater';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
@@ -13,6 +14,7 @@ class Layout extends Component {
           <div>
             <Route exact path={"/"} component={App}/>
             <Route path={"/menu"} component={Menu}/>
+            <Route path={"/read-later"} component={ReadLater}/>
           </div>
         </BrowserRouter>
     )
