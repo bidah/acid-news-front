@@ -105,7 +105,7 @@ export default class Item extends Component {
           }
           <footer
             onClick={this.setReadLater}>
-            <p>{this.state.readLater ? 'Saved into your Read Later list' : 'Read Later'}</p>
+            <p>{this.state.readLater ? 'Saved to your Read Later list' : 'Read Later'}</p>
           </footer>
         </div>
       )
