@@ -24,17 +24,16 @@ export default class Item extends Component {
   }
 
   setReadLater = () => {
-    fetch('http://localhost:3001/item/' + 'setReadLater', {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        user: window.localStorage.getItem('user'),
-        itemId: this.props.id
-      }),
-    })
+
+    let readList = window.navigator.userAgent.split(' ').join('')
+    let arr = JSON.parse(
+      window.localStorage.getItem(readList) 
+    )
+
+    if(!arr.includes(this.props.id))
+      arr.push(this.props.id)
+    
+    window.localStorage.setItem(readList, JSON.stringify(arr)) 
   }
 
   getArticle = (link) => {

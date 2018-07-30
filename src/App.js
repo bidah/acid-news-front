@@ -10,12 +10,18 @@ class App extends Component {
     this.setLocalStorage();
   }
 
-  // create user based on userAgent
   setLocalStorage = () => {
+
+    let readList = window.localStorage.getItem(
+      window.navigator.userAgent.split(' ').join(''),
+    )
+
+    if(readList != null)
+      return;
+
     window.localStorage.setItem(
-      'user', 
-      'testing_user'
-      // window.navigator.userAgent.split(' ').join('')
+      window.navigator.userAgent.split(' ').join(''),
+      '[]'
     )
   }
 
