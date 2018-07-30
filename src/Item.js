@@ -44,7 +44,6 @@ export default class Item extends Component {
       <div>
         <a 
           onClick = {this.toggleModal}
-          key = {this.props.index}
         >
           <li>
             <p>{this.state.points}</p>

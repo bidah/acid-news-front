@@ -52,6 +52,7 @@ fetch(url)
               .map((item, index) => {
                 return (
                   <Item
+                    key={index}
                     id={item.story_id}
                     url={item.story_url} 
                     title={item.title} 
