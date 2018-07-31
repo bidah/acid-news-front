@@ -1,6 +1,5 @@
-
-ul.menu {
-  background-color: #FF742B; 
+.menu {
+  background-color: #FF742B;
   color: white;
   text-align: center;
   height: 100vh;
@@ -16,15 +15,12 @@ ul.menu {
   border: 0;
   font-size: 33px;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .menu li {
   border: 0;
-  padding: 20px;
-}
+  padding: 20px; }
 
-a:link, a:visited, a:hover, a:active, a:hover  {
+a:link, a:visited, a:hover, a:active, a:hover {
   color: white;
-  text-decoration: none;
-}
+  text-decoration: none; }
