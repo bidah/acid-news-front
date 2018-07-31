@@ -5,7 +5,13 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: fixed;
+  width: 100%; }
+  @media only screen and (min-width: 500px) {
+    .App-header {
+      position: fixed;
+      max-width: 500px; } }
   .App-header a {
     margin-left: auto; }
   .App-header a img {
