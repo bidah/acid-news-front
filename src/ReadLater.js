@@ -5,6 +5,7 @@ import Loading from './Loading';
 import { Link } from 'react-router-dom'
 import burgerIcon from './images/bar-menu.svg';
 import deleteBtn from './images/delete-item.svg';
+import LinkNavigator from './LinkNavigator';
 
 export default class ReadLater extends Component {
   constructor(props){
@@ -13,6 +14,9 @@ export default class ReadLater extends Component {
     this.state = {
       loading: true,
       readList: [],
+      modal: false,
+      id: null,
+      url: null
     }
   }
 
@@ -61,7 +65,26 @@ export default class ReadLater extends Component {
       .then(() => this.setState({loading: false}))
   }
 
+  toggleModal = async (item) => {
+
+    await this.setState({id: item.id, url: item.url})
+    this.setState({modal: !this.state.modal})
+  }
+
   render() {
+
+    let modal;
+    if(this.state.modal) {
+      modal = (
+        <LinkNavigator
+          toggleModal={this.toggleModal}
+          id={this.state.id}
+          url={this.state.url}
+          askItem={!Boolean(this.state.url)}
+        />
+      )
+    } 
+
     return (
       <div className="read-later">
         <header className="App-header">
@@ -85,9 +108,10 @@ export default class ReadLater extends Component {
                 {
                   this.state.readList.map((item, index) => {
                     return (
-                      <li 
-                        key={index}>
-                        {item.title}
+                      <li key={index}>
+                        <p onClick = {() => this.toggleModal(item)}>
+                          {item.title}
+                        </p>
                         <img 
                           onClick={(e) => this.deleteItem(e, item.id)}
                           src={deleteBtn} alt="delete item"/>
@@ -98,6 +122,7 @@ export default class ReadLater extends Component {
               </ul>
           )
         }
+        { modal }
       </div>
     )
   }
