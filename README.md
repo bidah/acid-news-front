@@ -5,7 +5,7 @@
 npm install
 ```
 
-2. Run API 
+2. Run App
 
 ```
 npm start
