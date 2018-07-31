@@ -40,4 +40,5 @@ class App extends Component {
   }
 }
 
+console.log('env vars: ', process.env)
 export default App;
