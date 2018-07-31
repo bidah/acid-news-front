@@ -1,27 +1,19 @@
-
 li {
   padding: 20px;
   padding-left: 0;
   border-bottom: 1px solid #eaeaea;
   text-align: center;
-  display: flex;
-
-}
-
-li p:first-child {
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 58px;
-  color: #FF742B; 
-}
-
-li p {
-  text-align: left; 
-}
+  display: flex; }
+  li p:first-child {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 58px;
+    color: #FF742B; }
+  li p {
+    text-align: left; }
 
 a:link, a:active, a:visited, a:hover {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.8); 
-}
+  color: rgba(0, 0, 0, 0.8); }
