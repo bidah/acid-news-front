@@ -1,0 +1,48 @@
+.link-navigator {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  background: white;
+  header {
+    width: 100vw;
+    height: 60px;
+    color: white;
+    background: #FF742B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0; 
+  }
+
+  footer {
+    width: 100vw;
+    height: 60px;
+    color: white;
+    background: #FF742B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    bottom: 0; 
+  }
+
+  section {
+    background: white;
+  }
+
+  section p {
+    line-height: 1.8rem;
+    padding: 0px 20px 20px 20px;
+    white-space: pre-line;
+  }
+
+  h1 {
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+  }
+}
+

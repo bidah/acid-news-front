@@ -1,0 +1,32 @@
+
+.menu {
+  background-color: #FF742B; 
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    width: 100%;
+    text-align: center;
+    border: 0;
+    font-size: 33px;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    border: 0;
+    padding: 20px;
+  }
+
+  a:link, a:visited, a:hover, a:active, a:hover  {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+

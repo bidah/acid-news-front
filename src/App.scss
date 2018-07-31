@@ -1,0 +1,28 @@
+.App-header {
+  background-color: #FF742B; 
+  color: white;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    margin-left: auto;
+  }
+
+  a img {
+    max-width: 20px;
+    padding: 20px;
+  }
+
+  .App-title {
+    position: absolute;
+    font-size: 1.5em;
+  }
+
+}
+
+// @keyframes App-logo-spin {
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }
