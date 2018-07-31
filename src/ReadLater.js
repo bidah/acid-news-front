@@ -12,26 +12,53 @@ export default class ReadLater extends Component {
 
     this.state = {
       loading: true,
-      readList: [] 
+      readList: [],
     }
   }
 
+  deleteItem = (event, id) => {
+    
+    var event = event;
+    //remove element immediatily while doing async
+    event.target.parentElement.classList.add('hide')
+
+    let readList = JSON.parse(this.readList).filter(i => i != id)
+
+    window.localStorage.setItem(
+      window.navigator.userAgent.split(' ').join(''),
+      JSON.stringify(readList)
+    )
+
+    this.getList();
+    console.log('deleteItem --> deleted');
+  }
+
   async componentDidMount(){
+    this.getList();
+  }
+
+  getList = async () => {
 
     var items = [];
-    let readList = localStorage.getItem(
+    this.readList = localStorage.getItem(
       window.navigator.userAgent.split(' ').join('')
     )
 
-    JSON.parse(readList).forEach((item) => {
+    JSON.parse(this.readList).forEach((item) => {
       items.push(
-        fetch(process.env.REACT_APP_ALGOLIA_API_URL + item).then(res => res.json())
+        fetch(process.env.REACT_APP_ALGOLIA_API_URL + item)
+          .then(res => res.json())
+          .catch(e => {
+            if(e.message == 'Failed to fetch')
+              return fetch(process.env.REACT_APP_ALGOLIA_API_URL + item)
+                .then(res => res.json())
+          })
       )
     })
 
-    await Promise.all(items)
+    return await Promise.all(items)
       .then(readList => this.setState({readList}))
-      .finally(() => this.setState({loading: false}))
+      .then(() => this.setState({loading: false}))
   }
 
   render() {
@@ -51,9 +78,12 @@ export default class ReadLater extends Component {
                 {
                   this.state.readList.map((item, index) => {
                     return (
-                      <li key={index}>
+                      <li 
+                        key={index}>
                         {item.title}
-                        <img src={deleteBtn} alt="delete item"/>
+                        <img 
+                          onClick={(e) => this.deleteItem(e, item.id)}
+                          src={deleteBtn} alt="delete item"/>
                       </li>
                     )
                   })

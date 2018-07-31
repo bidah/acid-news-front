@@ -28,6 +28,7 @@ export default class Item extends Component {
     return Boolean(JSON.parse(readList).includes(this.props.id))
     ? this.setState({readLater: true}) : ''
   }
+
   componentDidMount = () => {
     this.bodyEl.classList.add('overflow')
     this.getArticle(this.props.url)
@@ -67,7 +68,7 @@ export default class Item extends Component {
     fetch(url)
       .then(res => res.json())
       .then(resJson =>{
-        this.setState({article: resJson.objects[0]})
+        this.setState({article: resJson.objects[0] || resJson.objects || resJson})
       })
       .finally(() => this.setState({loading: false}))
   }
