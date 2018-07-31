@@ -1,0 +1,20 @@
+.read-later {
+
+  li {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      max-height: 20px;
+      margin-left: 20px;
+    }
+
+  }
+
+  .hide {
+    display: none;
+  }
+
+}
