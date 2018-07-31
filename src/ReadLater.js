@@ -24,7 +24,7 @@ export default class ReadLater extends Component {
 
     JSON.parse(readList).forEach((item) => {
       items.push(
-        fetch('http://hn.algolia.com/api/v1/items/' + item).then(res => res.json())
+        fetch(process.env.REACT_APP_ALGOLIA_API_URL + item).then(res => res.json())
       )
     })
 

@@ -55,10 +55,10 @@ export default class Item extends Component {
     if(this.props.askItem)
       return this.setState({loading: false})
 
-    var url = new URL('https://api.diffbot.com/v3/article')
+    var url = new URL(process.env.REACT_APP_DIFFBOT_API_URL)
 
     var params = {
-      token: '03de456dbbf7ca6158fc550a73134783',
+      token: process.env.REACT_APP_DIFFBOT_TOKEN,
       url: link
     }
 

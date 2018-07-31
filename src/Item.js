@@ -18,7 +18,7 @@ export default class Item extends Component {
   }
 
   getPoints(title, id) {
-    fetch('http://localhost:3001/item/points/' + id)
+    fetch(process.env.REACT_APP_API_URL + '/item/points/' + id)
       .then(res => res.json())
       .then(resJson => this.setState({points: resJson.res}))
       .catch(e => {console.log('getPoints error: ', e)})

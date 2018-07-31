@@ -21,5 +21,7 @@ class Layout extends Component {
   }
 }
 
+console.log('env api var: ', process.env.REACT_APP_API_URL)
+debugger;
 ReactDOM.render(<Layout />, document.getElementById('root'));
 registerServiceWorker();
