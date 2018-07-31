@@ -5,23 +5,24 @@ import App from './App';
 import Menu from './Menu';
 import ReadLater from './ReadLater';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class Layout extends Component {
   render(){
     return (
         <BrowserRouter>
           <div>
-            <Route exact path={"/"} component={App}/>
-            <Route path={"/menu"} component={Menu}/>
-            <Route path={"/read-later"} component={ReadLater}/>
+            <Switch>
+              <Route exact path={"/"} component={App}/>
+              <Route path={"/menu"} component={Menu}/>
+              <Route path={"/read-later"} component={ReadLater}/>
+              <Route component={App}/>
+            </Switch>
           </div>
         </BrowserRouter>
     )
   }
 }
 
-console.log('env api var: ', process.env.REACT_APP_API_URL)
-debugger;
 ReactDOM.render(<Layout />, document.getElementById('root'));
 registerServiceWorker();

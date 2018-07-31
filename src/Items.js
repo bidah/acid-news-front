@@ -21,8 +21,6 @@ export default class Items extends Component {
   }
 
   getNews = () => {
-  console.log('env api var in getNews: ', process.env.REACT_APP_API_URL)
-    debugger;
     fetch(process.env.REACT_APP_API_URL + '/getData')
       .then(res => res.json())
       .then(resJson => this.setState({items: resJson.res}))
