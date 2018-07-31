@@ -1,3 +1,13 @@
+.read-later ul {
+  padding-top: 60px; }
+
+.read-later .empty-reading-list {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .read-later li {
   padding: 20px;
   text-align: left;

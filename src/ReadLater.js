@@ -76,6 +76,13 @@ export default class ReadLater extends Component {
           : (
               <ul>
                 {
+                  (
+                    Boolean(this.state.readList.length)
+                    ? ''
+                    : <span className="empty-reading-list">Empty reading list</span>
+                  )
+                }
+                {
                   this.state.readList.map((item, index) => {
                     return (
                       <li 
