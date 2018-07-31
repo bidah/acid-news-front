@@ -21,7 +21,12 @@ export default class Item extends Component {
     fetch(process.env.REACT_APP_API_URL + '/item/points/' + id)
       .then(res => res.json())
       .then(resJson => this.setState({points: resJson.res}))
-      .catch(e => {console.log('getPoints error: ', e)})
+      .catch(e => {
+        if(e.name === 'SyntaxError')
+          this.setState({points: '---'})
+
+        console.log('getPoints error: ', e)
+      })
   }
 
   toggleModal = (e) => {
@@ -44,9 +49,7 @@ export default class Item extends Component {
 
     return (
       <div>
-        <a 
-          onClick = {this.toggleModal}
-        >
+        <a onClick = {this.toggleModal}>
           <li>
             <p>{this.state.points}</p>
             <p>
