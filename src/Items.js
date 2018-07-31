@@ -45,7 +45,7 @@ export default class Items extends Component {
     return (
       this.state.loading 
       ? <Loading/>
-      : (<ul className="items-wrapper">
+      : (<ul className="items">
           { 
             this.state.items
               .map((item, index) => {

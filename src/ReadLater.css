@@ -9,12 +9,15 @@
   align-items: center; }
 
 .read-later li {
-  padding: 20px;
   text-align: left;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #eaeaea;
   justify-content: space-between; }
+  .read-later li p {
+    padding: 20px; }
   .read-later li img {
+    padding: 20px;
     max-height: 20px;
     margin-left: 20px; }
 

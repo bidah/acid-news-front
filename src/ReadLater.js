@@ -108,10 +108,10 @@ export default class ReadLater extends Component {
                 {
                   this.state.readList.map((item, index) => {
                     return (
-                      <li 
-                        onClick = {() => this.toggleModal(item) }
-                        key={index}>
-                        {item.title}
+                      <li key={index}>
+                        <p onClick = {() => this.toggleModal(item)}>
+                          {item.title}
+                        </p>
                         <img 
                           onClick={(e) => this.deleteItem(e, item.id)}
                           src={deleteBtn} alt="delete item"/>
