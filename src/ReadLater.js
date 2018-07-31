@@ -81,6 +81,7 @@ export default class ReadLater extends Component {
           id={this.state.id}
           url={this.state.url}
           askItem={!Boolean(this.state.url)}
+          removeFooter
         />
       )
     } 

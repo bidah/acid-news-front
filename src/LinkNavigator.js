@@ -104,10 +104,16 @@ export default class Item extends Component {
             ? <Loading loadingArticleMessage/>
             : this.props.askItem ? this.layoutAsk() : this.layoutLink()
           }
-          <footer
-            onClick={this.setReadLater}>
-            <p>{this.state.readLater ? 'Saved to your Read Later list' : 'Read Later'}</p>
-          </footer>
+          {
+            Boolean(this.props.removeFooter)
+            ? ''
+            : (
+              <footer
+                onClick={this.setReadLater}>
+                <p>{this.state.readLater ? 'Saved to your Read Later list' : 'Read Later'}</p>
+              </footer>
+            )
+          }
         </div>
       )
   }
