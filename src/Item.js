@@ -49,7 +49,7 @@ export default class Item extends Component {
 
     return (
       <div>
-        <a onClick = {this.toggleModal}>
+        <a onClick = {!Boolean(this.props.url) ? '' : this.toggleModal}>
           <li>
             <p>{this.state.points}</p>
             <p>
