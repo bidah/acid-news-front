@@ -1,4 +1,11 @@
 .read-later li {
   padding: 20px;
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.read-later li img {
+  max-height: 20px;
+  margin-left: 20px;
 }

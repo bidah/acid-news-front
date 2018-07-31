@@ -4,6 +4,7 @@ import './ReadLater.css';
 import Loading from './Loading';
 import { Link } from 'react-router-dom'
 import burgerIcon from './images/bar-menu.svg';
+import deleteBtn from './images/delete-item.svg';
 
 export default class ReadLater extends Component {
   constructor(props){
@@ -50,7 +51,10 @@ export default class ReadLater extends Component {
                 {
                   this.state.readList.map((item, index) => {
                     return (
-                      <li key={index}>{item.title}</li>
+                      <li key={index}>
+                        {item.title}
+                        <img src={deleteBtn} alt="delete item"/>
+                      </li>
                     )
                   })
                 }
